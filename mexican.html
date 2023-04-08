@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Swipe Bites</title>
+        <script src="#"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" href="logo.png"/>
+
+    </head>
+    <body>
+        <div id="swipebites">
+        <div class="headerContainer">
+            <header>
+                <ul>
+                    <li>
+                        <a href="file:///C:/Users/Sophia/OneDrive/Desktop/webDev/SwipeBites/index.html">
+                            <img src="headerlogo.png" height="80px">
+                        </a>
+                    </li>
+                </ul>
+            </header>
+        </div>
+        <div class="foods-container">
+
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade" data-value="Enchiladas">
+            <div class="numbertext">1 / 3</div>
+                <img src="en.jpeg" width="400" height="400">
+            <div class="text">Enchiladas</div>
+            </div>
+       
+            <div class="mySlides fade" data-value="Tacos">
+            <div class="numbertext">2 / 3</div>
+            <img src="tacos.jpg" width="400" height="400">
+            <div class="text">Tacos</div>
+            </div>
+       
+            <div class="mySlides fade" data-value="Burritos">
+            <div class="numbertext">3 / 3</div>
+            <img src="burritos.jpg" style="width:100%">
+            <div class="text">Burritos</div>
+            </div>
+       
+            <!-- yum and nah buttons -->
+            <a class="nah" onclick="plusSlides(-1)">&#129320;</a>
+            <a class="yum" onclick="plusSlides(1)">&#128523;</a>
+        </div>
+        <br>
+        <script src="Mex.js"></script>
+            <button class="submitbutton" onclick="showRecs()">Submit</button>
+    </div>
+        <div id="restaurant" style="display: none; width: 100vw">
+            <div class="headerContainer">
+                <header>
+                    <ul>
+                        <li>
+                            <a href="file:///C:/Users/Sophia/OneDrive/Desktop/webDev/SwipeBites/index.html">
+                                <img src="headerlogo.png" height="80px">
+                            </a>
+                        </li>
+                    </ul>
+                </header>
+            </div>
+            <div class="restaurantIcons" style="width: 90vw;">
+                <div class="mexican" style="display: flex; justify-content: center; width: auto; margin: auto;">
+                    <div class="tacos" style="position: relative;">
+                        <h1>El Centro</h1>
+                        <img src="elcentro.jpg" height="auto" style="width:100%">
+                        <h2>472 Shawmut Ave, Boston, MA 02118</h2>
+                    </div>
+                    <div class="burritos" style="position: relative;">
+                        <h1>Habanero Mexican Grill</h1>
+                        <img src="habanero.jpg" height="auto" style="width:100%">
+                        <h2>166 Brighton Ave, Allston, MA 02134</h2>
+                    </div>
+                    <div class="enchiladas" style="position: relative;">
+                        <h1>Rincón mexicano</h1>
+                        <img src="rincon.jpeg" height="auto" style="width:100%">
+                        <h2> 99 Broadway, Somerville, MA 02145</h2>
+                    </div>
+                </div>
+            </div>
+    </body>
+</html>
+<style>
+    body
+    {
+    --color-primary: #ff4d65;
+    --color-primary-dark: #ec355c;
+    --color-dark: #f53c5e;
+    --border-radius: 4px;
+   
+    font: 500 1rem 'Poppins', sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    background-size: cover;
+    background-image: url(background.jpg);
+    }
+    * {box-sizing:border-box}
+
+    .submitbutton
+    {
+        padding: 1.5rem 4rem;
+        font-weight: bold;
+        font-size: 1.3rem;
+        color: var(--color-dark);
+        border: none;
+        border-radius: var(--border-radius);
+        outline: none;
+        cursor: pointer;
+        background-color: #fff;
+        margin-top: 10px;
+        transition: 0.5s;
+        position: absolute;
+        bottom: 120px;
+        margin-bottom: 30px;
+        left: 1180px;
+    }
+/* foods container */
+.foods-container {
+  max-width: 400px;
+  position: relative;
+  margin: auto;
+}
+
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+img
+{
+    border-radius: 50px;
+    border: solid;
+    border-color: #fff;
+    border-width: 5px;
+}
+/* Yum & nah buttons */
+.nah, .yum {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+
+}
+
+.numbertext
+{
+    left: 40px;
+    position: absolute;
+    margin-top: 20px;
+}
+/* Position the "yum button" to the right */
+.yum {
+  right: -100px;
+  border-radius: 3px 0 0 3px;
+  border-radius: 80px;
+
+}
+
+.nah
+{
+    left: -100px;
+    border-radius: 80px;
+
+}
+
+
+/* On hover, add a black background color with a little bit see-through */
+.nah:hover, .yum:hover {
+  background-color: rgba(253, 253, 253, 0.8);
+}
+
+
+/* Caption text */
+.text {
+    background-color: var(--color-dark);
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 8px;
+    position: absolute;
+    bottom: -80px;
+    width: auto;
+    height: auto;
+    border: solid;
+    border-color: #fff;
+    border-width: 5px;
+    margin: 50px 0 0 140px;
+    text-align: center;
+    position: absolute;
+    }
+
+
+/* Number text (1/3 etc) */
+.numbertext {
+    background-color:   #fd556378;
+    border-radius: 10px;
+    width: auto;
+    height: auto;
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px;
+    position: absolute;
+    top: 0;
+}
+
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+
+/* .moveYum {
+    animation: mymove 1s ease-out;
+    position: relative;
+}
+
+
+.moveNah {
+    animation: mymove 1s ease-out;
+    position: relative;
+    animation-direction: reverse;
+} */
+
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+/* @keyframes mymove {
+    from {left: 0%}
+    to {left: 120%}
+} */
+
+    header
+    {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      left: 0px;
+      padding: 1px 30px;
+      display: flex;
+      align-items: center;
+      background-color: var(--color-dark);
+      backdrop-filter: blur(10px);
+      justify-content: center;
+    }
+    header ul
+    {
+      display: flex;
+      align-items: center;
+    }
+ 
+     header ul li
+    {
+      list-style: none;
+      margin: 10 15px;
+      color: #fff;
+      font-size: 20px;
+    }
+ 
+
+    header ul li a
+    {
+      text-decoration: none;
+      padding: 8px 20px;
+      border-radius: 25px;
+      margin-bottom: 100px;
+      margin-right: 40px;
+      color: white;
+      font-weight: 70px;
+      font-size: 35px;
+    }
+
+    header ul li a img
+    {
+        background-color: #fff;
+        border-radius: 80px;
+    }
+    .restaurantIcons
+    {
+        display: inline;
+        /* width: 800px; */
+        justify-content: center;
+        position: relative;
+    }
+
+    .tacos
+    {
+    width: 30vw;
+    margin: 1rem;
+    padding: 2rem;
+    padding-top: 5px;
+    padding-right: 50px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    background: #fff;
+    font-size: 12px;
+    justify-content: center;
+    }
+
+    .tacos img
+    {
+        border-radius: var(--border-radius);
+        border: solid;
+        border-color: #ec355c;
+        border-width: 5px;
+        position: relative;
+        right: 5px;
+    }
+    .burritos
+    {
+    width: 30vw;
+    margin: 1rem;
+    padding: 2rem;
+    padding-top: 5px;
+    padding-right: 50px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    background: #fff;
+    font-size: 12px;
+    justify-content: center;
+    }
+
+    .burritos img
+    {
+        border-radius: var(--border-radius);
+        border: solid;
+        border-color: #ec355c;
+        border-width: 5px;
+        position: relative;
+        right: 5px;
+    }
+    .enchiladas
+    {
+    width: 30vw;
+    margin: 1rem;
+    padding: 2rem;
+    padding-top: 5px;
+    padding-right: 50px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    background: #fff;
+    font-size: 12px;
+    justify-content: center;
+    }
+
+    .enchiladas img
+    {
+        border-radius: var(--border-radius);
+        border: solid;
+        border-color: #ec355c;
+        border-width: 5px;
+        position: relative;
+        right: 5px;
+    }
+</style>
